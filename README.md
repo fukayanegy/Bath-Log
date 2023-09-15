@@ -12,13 +12,58 @@
 #### 具体的に必要なシステム
 1. ユーザー登録システム(mail登録を想定)
 2. 位置情報から近くの利用できる施設をマッピングするシステム
-3. 利用者が風呂場の場所を投稿することができる機能  
-    1. 風呂場の名前
-    2. 種類(銭湯・漫画喫茶・ホテル・その他)
-    3. 利用料金
-    4. 場所
-    5. アメニティ
-    6. きれいさ・利用のしやすさ
-    7. 利用条件(主に入れ墨・タトゥーなど)
-    8. 口コミ
-### タスク要件
+3. 利用者が風呂場の場所を投稿することができる機能    
+    1. 風呂場の名前  
+    2. 種類(銭湯・漫画喫茶・ホテル・その他)  
+    3. 利用料金  
+    4. 場所  
+    5. アメニティ  
+    6. きれいさ・利用のしやすさ  
+    7. 利用条件(主に入れ墨・タトゥーなど)  
+    8. 口コミ  
+### タスク要件  
+#### 必要なデータベース  
+##### user_datas
+1. ID(primary key)
+1. mail_address(alternate key)  
+登録時に使用したメールアドレス  
+2. user_name  
+投稿時などに使用するニックネーム  
+UTF-8で15文字以内
+3. real_name  
+本名。ユーザー同士は見られない  
+今後予約機能などを追加した際に使用する  
+4. phone_number(alternate key)  
+電話番号  
+登録しなくてもユーザー登録・閲覧をすることは可能  
+予約などがしにくくなったり、パスワード・メールアドレスを忘れた際に使用する予定  
+5. address  
+住所
+他のユーザーに見せることも見せないこともできる  
+家から近いといった検索が可能になる  
+6. post_log  
+今までに投稿した数
+7. likly_store  
+##### bath_datas  
+1. ID(primary key)
+2. store_name
+3. nearest_station
+4. store_type
+5. regular_closing_day
+6. min_charge
+7. max_charge
+8. phone_number
+9. address
+10. business_hours
+11. payment_method
+12. max_users
+13. home_page
+14. post_user_id
+##### word_of_mouth
+1. ID(primary key)
+2. target_store
+3. edit_user
+4. context
+
+
+
