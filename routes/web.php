@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/bath_datas', 'App\Http\Controllers\Bath_dataController@index')->name('bath_datas.index');
+Route::get('/bath_datas/create', 'App\Http\Controllers\Bath_dataController@create')->name('bath_datas.create');
+Route::post('/bath_datas/store', 'App\Http\Controllers\Bath_dataController@store')->name('bath_datas.store');
+
